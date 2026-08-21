@@ -1417,3 +1417,60 @@ background: transparent !important;
     grid-template-columns: 1fr !important;
   }
 }
+
+/* SPREMEMBA STYLES ZA MALE EKRANE */
+
+/* ==========================================================================
+   SHORT / SMALL MONITOR FIX (COMPACT HORIZONTAL LAYOUT)
+   ========================================================================== */
+
+@media (max-height: 800px) {
+  /* 1. Remove forced full-height constraint so content isn't chopped off */
+  #ordinacije {
+    min-height: auto !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* 2. Compact section header spacing */
+  .schedules-header {
+    margin-bottom: 15px !important;
+  }
+  .schedules-header h2 {
+    font-size: 1.8rem !important;
+  }
+
+  /* 3. Reduce padding inside cards to fit more content */
+  .clinic-card {
+    padding: 18px 22px !important;
+  }
+
+  /* 4. Switch BROD doctors to side-by-side horizontal layout */
+  .card-brod {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 20px !important;
+    row-gap: 10px !important;
+  }
+
+  /* Span card header across both columns */
+  .card-brod .clinic-card-header {
+    grid-column: 1 / -1;
+  }
+
+  /* Remove top dashed border divider */
+  .divider-top {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+
+  /* Tighten table padding */
+  .schedule-table td {
+    padding: 3px 0 !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+
+/* KONEC */
