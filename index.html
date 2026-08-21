@@ -47,154 +47,112 @@
 
 <body>
 
+     <div class="banner-container">
+                <!-- Replace banner.jpg with the filename/path of the saved banner image -->
+                <img src="bannerhopefully.jpg" alt="ZOBKI D.O.O. Banner" class="banner-image">
+            </div>
   
     <!-- Main Navigation Header -->
 
     <header id="Domov" class="main-header">
   <div class="nav-container">
-    <!-- 1. BRAND / LOGO -->
-    <!-- <a href="#" class="nav-logo">
-      <span class="logo-accent">ZOBKI</span> d.o.o.
-    </a> -->
+    
+    <!-- Logo on the far left -->
+    <a href="index.html#top" class="nav-logo">
+      <img src="zobek-logo-nov.png" alt="ZOBKI Logo" class="logo-img">
+    </a>
 
-            <div class="banner-container">
-                <!-- Replace banner.jpg with the filename/path of the saved banner image -->
-                <img src="bannerhopefully.jpg" alt="ZOBKI D.O.O. Banner" class="banner-image">
-            </div>
+    <!-- Centered Navigation Links -->
+    <div class="header-transition-wrapper">
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html#top" class="nav-item active">Domov</a></li>
+          <li><a href="#ordinacije" class="nav-item">Ordinacije</a></li>
+          <li><a href="#storitve" class="nav-item">Storitve</a></li>
+          <li><a href="#tehnologija" class="nav-item">Tehnologija</a></li>
+          <li><a href="#kontakt" class="nav-item">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
 
-            <!-- Navigation Bar -->
-           <div class="header-transition-wrapper">
-           
-            <nav class="nav-menu">
-                
-                
-                
-                <ul class="nav-list"> 
+    <!-- Empty spacer to perfectly balance the logo and keep links dead center -->
+    <div class="nav-spacer"></div>
 
-                    <li><a href="index.html#top" class="nav-item active">Domov</a></li>
-                    <li><a href="#ordinacije" class="nav-item">Ordinacije</a></li>
-                    <li><a href="#storitve" class="nav-item">Storitve</a></li>
-                    <li><a href="#tehnologija" class="nav-item">Tehnologija</a></li>
-                    <li><a href="#kontakt" class="nav-item">Kontakt</a></li>
-                </ul>
-            </nav>
-
-
-
-            <!-- Call-To-Action Button / User Controls -->
-            <!-- <div class="header-actions">
-                <a href="#login" class="btn btn-secondary">Log In</a>
-                <a href="#signup" class="btn btn-primary">Get Started</a>
-            </div> -->
-        </div>
+  </div>
     </header>
 
     <!-- Main Content Area -->
     <main id="main-content">
 
-        <section class="announcement-section">
-  <!-- TOP INTRO TEXT -->
-  <p id="intro-text" class="text-red">Spoštovani , prosimo vas, da se za termin naročite po telefonu, z SMS ali na e-mail.</p>
 
-   <!-- CONTACT DETAILS  -->
-  <div class="contact-details">
-    <p>
-      Za BROD 
-      <a id="brod-phone" href="tel:041360039" class="link-blue">041360039</a> 
-      in e-mail 
-      <a id="brod-email" href="mailto:zobki.brod@gmail.com" class="link-blue">zobki.brod@gmail.com</a>
-    </p>
-    <p>
-      Za ČUFAR 
-      <a id="cufar-phone" href="tel:030650301" class="link-blue">030650301</a> 
-      in e-mail 
-      <a id="cufar-mail" href="mailto:zobki.lj@gmail.com" class="link-blue">zobki.lj@gmail.com</a>
-    </p>
+<!-- SECTION: ORDINACIJE -->
+<section id="ordinacije" class="schedules-hero">
+  
+  <!-- Centered Title Block -->
+  <div class="schedules-header">
+    <h2>Delovni Čas Ordinacij</h2>
+    <p>Naročanje poteka preko telefona, SMS sporočil ali e-pošte.</p>
   </div>
 
-   <!-- ANNOUNCEMENT NOTICE  -->
-  <p id="notice-text" class="text-red-italic">
-    Obveščamo vas, da Zobna ordinacija ČUFAR sprejema z veseljem nove paciente- tako samoplačniške kot otroke na koncesijo !!!
-  </p>
-
-   <!-- FOOTER NOTICE  -->
-  <p id="footer-text" class="text-red">Na termin prihajajte zdravi, v čakalnici si razkužite roke .</p>
-</section> 
-</div>
-
-        <!-- ORDINACIJE -->
-        
-        <section id="ordinacije" class="schedules-hero">
-  <div class="schedules-container">
-    <div class="schedules-header">
-      <h2>Delovni Čas Ordinacij</h2>
-      <p>Naročanje poteka preko telefona, SMS sporočil ali e-pošte.</p>
-    </div>
-
-    <div class="schedules-grid">
-      <!-- Ordinacija BROD -->
-      <div class="clinic-card">
-        <div class="clinic-card-header">
-          <h3>Ordinacija BROD</h3>
-          <p class="address">Putrihova 1, 1133 Ljubljana-Brod</p>
-          <a href="tel:041360039" class="phone-link">📞 041 360 039</a>
-        </div>
-
-        <div class="doctor-schedule">
-          <h4>dr. Marjan LAH, dr. dent. med.</h4>
-          <table class="schedule-table">
-            <tr><td>Ponedeljek</td><td>08.00 – 13.00</td></tr>
-            <tr><td>Torek</td><td>13.00 – 19.00</td></tr>
-            <tr><td>Sreda</td><td>13.00 – 19.00</td></tr>
-            <tr><td>Četrtek</td><td>08.00 – 13.00</td></tr>
-            <tr><td>Petek</td><td>Po dogovoru</td></tr>
-          </table>
-        </div>
-
-        <div class="doctor-schedule divider-top">
-          <h4>dr. Jasna FERKO, dr. dent. med.</h4>
-          <table class="schedule-table">
-            <tr><td>Ponedeljek</td><td>13.00 – 19.00</td></tr>
-            <tr><td>Torek</td><td>07.00 – 13.00</td></tr>
-            <tr><td>Sreda</td><td>07.00 – 13.00</td></tr>
-            <tr><td>Četrtek</td><td>13.00 – 19.00</td></tr>
-            <tr><td>Petek</td><td>Po dogovoru</td></tr>
-          </table>
-        </div>
+  <!-- Side-by-Side Cards Wrapper -->
+  <div class="schedules-grid">
+    
+    <!-- CARD 1: BROD -->
+    <div class="clinic-card">
+      <div class="clinic-card-header">
+        <h3>Ordinacija BROD</h3>
+        <p class="address">Putrihova 1, 1133 Ljubljana-Brod</p>
+        <a href="tel:041360039" class="phone-link">📞 041 360 039</a>
       </div>
 
-      <!-- Center Mascot Divider -->
-      <div class="mascot-center">
-        <div class="mascot-wrapper">
-          <img src="zobek-logo-nov.png" alt="Zobek Mascot" class="mascot-img" />
-        </div>
+      <div class="doctor-schedule">
+        <h4>dr. Marjan LAH, dr. dent. med.</h4>
+        <table class="schedule-table">
+          <tr><td>Ponedeljek</td><td>08.00 – 13.00</td></tr>
+          <tr><td>Torek</td><td>13.00 – 19.00</td></tr>
+          <tr><td>Sreda</td><td>13.00 – 19.00</td></tr>
+          <tr><td>Četrtek</td><td>08.00 – 13.00</td></tr>
+          <tr><td>Petek</td><td>Po dogovoru</td></tr>
+        </table>
       </div>
 
-      <!-- Ordinacija ČUFAR -->
-      <div class="clinic-card">
-        <div class="clinic-card-header">
-          <h3>Ordinacija ČUFAR</h3>
-          <p class="address">Čufarjeva ulica 11, 1000 Ljubljana</p>
-          <a href="tel:030650301" class="phone-link">📞 030 650 301</a>
-        </div>
-
-        <div class="doctor-schedule">
-          <h4>Splošni Ordinacijski Urnik</h4>
-          <table class="schedule-table">
-            <tr><td>Ponedeljek</td><td>13.00 – 20.00</td></tr>
-            <tr><td>Torek</td><td>06.30 – 13.30</td></tr>
-            <tr><td>Sreda</td><td>06.30 – 13.30</td></tr>
-            <tr><td>Četrtek</td><td>06.30 – 13.30</td></tr>
-            <tr><td>Petek</td><td>06.30 – 13.30</td></tr>
-          </table>
-        </div>
-
-        <div class="clinic-notice">
-          <span class="badge">Novi Pacienti</span>
-          <p>Sprejemamo nove paciente (samoplačnike in otroke na koncesijo).</p>
-        </div>
+      <div class="doctor-schedule divider-top">
+        <h4>dr. Jasna FERKO, dr. dent. med.</h4>
+        <table class="schedule-table">
+          <tr><td>Ponedeljek</td><td>13.00 – 19.00</td></tr>
+          <tr><td>Torek</td><td>07.00 – 13.00</td></tr>
+          <tr><td>Sreda</td><td>07.00 – 13.00</td></tr>
+          <tr><td>Četrtek</td><td>13.00 – 19.00</td></tr>
+          <tr><td>Petek</td><td>Po dogovoru</td></tr>
+        </table>
       </div>
     </div>
+
+    <!-- CARD 2: ČUFAR -->
+    <div class="clinic-card">
+      <div class="clinic-card-header">
+        <h3>Ordinacija ČUFAR</h3>
+        <p class="address">Čufarjeva ulica 11, 1000 Ljubljana</p>
+        <a href="tel:030650301" class="phone-link">📞 030 650 301</a>
+      </div>
+
+      <div class="doctor-schedule">
+        <h4>Splošni Ordinacijski Urnik</h4>
+        <table class="schedule-table">
+          <tr><td>Ponedeljek</td><td>13.00 – 20.00</td></tr>
+          <tr><td>Torek</td><td>06.30 – 13.30</td></tr>
+          <tr><td>Sreda</td><td>06.30 – 13.30</td></tr>
+          <tr><td>Četrtek</td><td>06.30 – 13.30</td></tr>
+          <tr><td>Petek</td><td>06.30 – 13.30</td></tr>
+        </table>
+      </div>
+
+      <div class="notice-box">
+        <span class="badge">NOVI PACIENTI</span>
+        <p>Sprejemamo nove paciente (samoplačnike in otroke na koncesijo).</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -670,6 +628,7 @@ do Putrihove ulice 1:</p>
         <li>📍 Putrihova ulica 1, 1133 Ljubljana-Brod</li>
         <li>📍 Čufarjeva ulica 11, 1000 Ljubljana</li>
         <li>📧 <a href="mailto:zobki.brod@gmail.com">zobki.brod@gmail.com</a></li>
+           <li>📧 <a href="mailto:zobki.lj@gmail.com">zobki.lj@gmail.com</a></li>
       </ul>
     </div>
 

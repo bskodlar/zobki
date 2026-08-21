@@ -48,9 +48,21 @@ header::after {
   border-radius: 2px;
 }
 
-
 /* KONC */
 
+
+/* NAVMENUSTIKYSHIT */
+
+.nav-menu{
+background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50px;
+  display: inline-block;
+  padding: 5px 15px;
+}
+
+/* KONC */
 
 header, 
 .nav-banner, 
@@ -161,6 +173,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .banner-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
       width: 100%;
       height: 350px;
       background-color: #f8f9fa;
@@ -170,8 +185,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .banner-image {
-      width: 100%;
-      height: auto;        /* Forces the thin height you want */
+     width: 100%;
+  display: block;
+  object-fit: cover;      /* Forces the thin height you want */
   
     }
 
@@ -281,12 +297,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-header {
-  background-color: #f0f7ff;
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: transparent !important; /* Removes the dark/white header bar */
+  width: 100%;
 }
 
 .ordinacije{
@@ -384,13 +399,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #storitve {
   /* Set this to the height of your navigation bar + a bit of padding */
-  scroll-margin-top: 450px; 
+  scroll-margin-top: 50px; 
 }
 
 
 /* Smooth Scroll Margin for Navbar Offset */
 #tehnologija {
-  scroll-margin-top: 450px;
+  scroll-margin-top: 50px;
 }
 
 .tech-section {
@@ -489,7 +504,7 @@ h1, h2, h3, h4, h5, h6 {
 /* KONTAKT STYLES */
 
 #kontakt {
-  scroll-margin-top: 450px;
+  scroll-margin-top: 50px;
 }
 
 .contact-section {
@@ -775,7 +790,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ORDINACIJE STYLES */
 #ordinacije {
-  scroll-margin-top: 450px;
+  scroll-margin-top: 100px;
 }
 
 .schedules-hero {
@@ -1070,4 +1085,163 @@ section,
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.8) !important;
   box-shadow: 0 8px 32px 0 rgba(2, 132, 199, 0.08) !important;
+}
+
+/* UPAMDAFIXABANNER */
+
+
+.nav-container,
+.header-transition-wrapper {
+  background: transparent !important; /* Fixes the white stripe running through buttons */
+  box-shadow: none !important;
+  padding: 10px 0;
+}
+
+
+/* Sticky Outer Header */
+.main-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100%;
+  background: rgba(240, 248, 255, 0.85); /* Matches light blue page background with glass blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Main Container (Pushes logo left, spacer right, menu center) */
+.nav-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo Styling */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 45px; /* Adjust height to fit your bar */
+  width: auto;
+  display: block;
+}
+
+/* Centers the Pill Container */
+.header-transition-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  flex-grow: 1;
+}
+
+/* Pill Background for Navigation */
+.nav-menu {
+background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Nav List Alignment */
+.nav-list {
+  display: flex !important;
+  gap: 10px;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Equal balance spacer */
+.nav-spacer {
+  width: 120px; /* Matches approximate logo width for true dead-center menu */
+}
+
+@media (max-width: 768px) {
+  .nav-spacer { display: none; }
+}
+
+
+/* ORDINACIJE POPRAVKI STYLES */
+
+/* Container wrapping both clinic cards */
+.ordinacije-container {
+  display: flex !important;
+  justify-content: center !important; /* Centers both cards horizontally */
+  align-items: stretch !important;    /* Makes both cards equal height */
+  gap: 40px !important;               /* Adds clean spacing between cards */
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Ensure individual clinic cards scale properly */
+.ordinacija-card {
+  flex: 1 1 450px;                   /* Ensures equal width */
+  max-width: 480px;
+  margin: 0 !important;              /* Clears old offset margins */
+}
+
+.schedules-grid {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 40px !important; /* This creates the physical space between cards */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.clinic-card {
+  flex: 1; /* Makes both cards equal width */
+  max-width: 480px;
+}
+
+
+/* SEZADNIPOPRAVKIORDINACIJESTYLES */
+
+
+/* Outer Section Setup */
+.schedules-hero {
+  display: block !important; /* Prevents flex from putting title on the left */
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Centered Header Text */
+.schedules-header {
+  text-align: center !important;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Side-by-Side Cards Alignment */
+.schedules-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 30px !important; /* Space between the two clinic cards */
+  width: 100%;
+}
+
+/* Individual Cards */
+.clinic-card {
+  flex: 1 1 0px !important; /* Forces both cards to have equal width */
+  max-width: 500px;
+  margin: 0 !important;
+}
+
+/* Mobile Responsiveness (Stacks cards vertically on phones) */
+@media (max-width: 768px) {
+  .schedules-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .clinic-card {
+    width: 100%;
+  }
 }
