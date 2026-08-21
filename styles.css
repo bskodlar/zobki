@@ -1,0 +1,1073 @@
+/* ==========================================================================
+   1. GLOBAL RESETS & BOX MODEL
+   ========================================================================== */
+
+/* Universal border-box model for all elements (and pseudo-elements) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enable smooth scrolling for anchor links (e.g., #services, #contact) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Set core root/body defaults */
+html {
+  font-size: 100%; /* Respect user default browser font size (usually 16px) */
+  -webkit-text-size-adjust: 100%; /* Prevent automatic font scaling on iOS landscape */
+}
+
+
+/* SPET HEADER BORDER STYLE MAYBE */
+
+header {
+  position: relative; /* Essential for placing the pseudo-element line */
+}
+
+/* Styled bottom accent line */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%; /* Fades out before touching screen edges */
+  height: 2px;
+  background: linear-gradient(
+    90deg, 
+    rgba(2, 132, 199, 0) 0%, 
+    rgba(56, 189, 248, 0.8) 50%, 
+    rgba(2, 132, 199, 0) 100%
+  );
+  border-radius: 2px;
+}
+
+
+/* KONC */
+
+
+header, 
+.nav-banner, 
+.hero-banner {
+  /* Retain original header background styling */
+  position: relative;
+  z-index: 10;
+}
+
+body {
+  min-height: 100vh; /* Ensure footer stays pushed down */
+  line-height: 1.6; /* Optimal readability for medical/service info */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1e293b; /* Softer, high-contrast dark gray instead of harsh pure black */
+  background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 50%, #e0f2fe 100%);
+  background-attachment: fixed; /* Keeps the gradient smooth as users scroll */
+}
+
+/* ==========================================================================
+   2. MEDIA & MEDIA ELEMENTS FIXES
+   ========================================================================== */
+
+/* Prevent images, SVGs, and videos from overflowing their grid/containers */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & FORM ELEMENTS RESETS
+   ========================================================================== */
+
+/* Inherit fonts for form inputs (by default, forms use browser native fonts) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Prevent textareas from breaking layout via resizing */
+textarea {
+  resize: vertical;
+}
+
+/* Improve button defaults */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Remove default list styling (bullets/padding) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default link underline styles while keeping them accessible */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Prevent heading overflow & fix line-heights for titles */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. ACCESSIBILITY & UTILITY BASE
+   ========================================================================== */
+
+/* Focus outline for keyboard navigation (crucial for medical accessibility) */
+:focus-visible {
+  outline: 3px solid #0284c7; /* Subtle dentist-blue accent color */
+  outline-offset: 3px;
+}
+
+/* Utility class to hide elements visually while keeping them for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+
+
+/* THIS IS START OF CSS */
+
+
+.banner-container {
+      width: 100%;
+      height: 350px;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .banner-image {
+      width: 100%;
+      height: auto;        /* Forces the thin height you want */
+  
+    }
+
+/* .logo {
+  width: 160px;
+  height: 160px;
+}
+
+.logo-container{
+  display: flex;
+      align-content: center;
+    justify-content: center;
+    margin-top: 25px;
+} */
+
+
+.announcement-section {
+  background-color: #f0f7ff;          /* Light, calm background */
+  border-top: 1px solid #e0f2fe;      /* Subtle top border */
+  border-bottom: 1px solid #e0f2fe;   /* Subtle bottom border */
+  padding: 40px 20px;                 /* Adds breathing room */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Deep crimson red instead of neon red */
+.text-red {
+  color: #991b1b;
+  font-size: 15px;
+  margin: 0;
+}
+
+.text-red-italic {
+  color: #991b1b;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0;
+}
+
+.contact-details {
+  color: #1e293b;                     /* Dark slate for readable text */
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.link-blue {
+  color: #0284c7;                     /* Professional blue */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-blue:hover {
+  text-decoration: underline;
+}
+
+
+.nav-list{
+  margin-top: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom:50px;
+}
+
+
+.nav-item {
+  border: 2px solid #81b3d7;
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 6px 18px;
+  display: inline-block;
+  text-decoration: none;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #0284c7;
+}
+
+/* Call to Action Button */
+.cta-button {
+  background-color: #0284c7;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #0369a1;
+}
+
+.main-header {
+  background-color: #f0f7ff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.ordinacije{
+  margin-bottom: 300px;
+} 
+
+
+.services-section {
+  background-color: #f8fafc;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-title {
+  text-align: center;
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 40px;
+  font-weight: 700;
+  position: relative;
+}
+
+.services-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #0284c7;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Service Card Style */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+#storitve {
+  /* Set this to the height of your navigation bar + a bit of padding */
+  scroll-margin-top: 450px; 
+}
+
+
+/* Smooth Scroll Margin for Navbar Offset */
+#tehnologija {
+  scroll-margin-top: 450px;
+}
+
+.tech-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.tech-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tech-title {
+  text-align: center;
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 40px;
+  font-weight: 700;
+  position: relative;
+}
+
+.tech-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #0284c7;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+/* Card Design */
+.tech-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.tech-card .card-image {
+  width: 100%;
+  height: 180px;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.tech-card .card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Keeps equipment logos/photos clear without cropping */
+}
+
+.tech-card .card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tech-card .card-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.tech-card .card-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+
+/* KONTAKT STYLES */
+
+#kontakt {
+  scroll-margin-top: 450px;
+}
+
+.contact-section {
+  background-color: #f8fafc;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+/* Two Column Grid */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+/* Location Card */
+.location-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-header {
+  padding: 24px;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.badge-primary {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.badge-secondary {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.location-header h3 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+.location-header .address {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.location-body {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.info-group {
+  margin-bottom: 20px;
+}
+
+.info-group h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: #0284c7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-group p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+.info-group a {
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.info-group a:hover {
+  text-decoration: underline;
+}
+
+/* Hours Table/List */
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 4px 0;
+  border-bottom: 1px dashed #f1f5f9;
+  color: #334155;
+}
+
+.media-container {
+  width: 100%;
+  background: #000;
+}
+
+/* DOTATNA NAVODILA STYLES */
+
+/* Accordion Container */
+.extra-info-accordion {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+/* Accordion Header Bar */
+.accordion-header {
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0284c7;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  list-style: none; /* Hides default browser arrow */
+}
+
+.accordion-header::-webkit-details-marker {
+  display: none; /* Hides default arrow in Chrome/Safari */
+}
+
+.extra-info-accordion[open] .accordion-header {
+  background-color: #e0f2fe;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.extra-info-accordion[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.chevron {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Inner Content Area */
+.accordion-content {
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.video-desc {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* Responsive 16:9 YouTube Container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: #000000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.extra-notes-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Multi-Video Grid Layout */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.video-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 6px 0;
+}
+
+/* Responsive 16:9 Aspect Ratio */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #000000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+
+/* Container to place schedules side-by-side */
+.schedules-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; /* Automatically stacks on mobile screens */
+}
+
+.schedule-column {
+  flex: 1;
+  min-width: 200px; /* Forces stack on narrow phone displays */
+  background-color: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.doctor-name {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: #0284c7;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+
+/* ORDINACIJE STYLES */
+#ordinacije {
+  scroll-margin-top: 450px;
+}
+
+.schedules-hero {
+  background: #f8fafc;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.schedules-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.schedules-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.schedules-header h2 {
+  font-size: 2.4rem;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.schedules-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.schedules-grid {
+  display: grid;
+  grid-template-columns: 1fr 220px 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.clinic-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border: 1px solid #e2e8f0;
+}
+
+.clinic-card-header h3 {
+  font-size: 1.6rem;
+  color: #0284c7;
+  margin: 0 0 6px 0;
+}
+
+.clinic-card-header .address {
+  color: #64748b;
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+}
+
+.phone-link {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.doctor-schedule h4 {
+  font-size: 1.05rem;
+  color: #334155;
+  margin: 15px 0 10px 0;
+  border-bottom: 2px solid #38bdf8;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.divider-top {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.schedule-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.mascot-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mascot-wrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.15);
+  border: 3px solid #38bdf8;
+}
+
+.mascot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.clinic-notice {
+  margin-top: 25px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.clinic-notice .badge {
+  background: #16a34a;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.clinic-notice p {
+  margin: 6px 0 0 0;
+  font-size: 0.85rem;
+  color: #15803d;
+  font-weight: 500;
+}
+
+/* Responsive collapse for mobile devices */
+@media (max-width: 900px) {
+  .schedules-grid {
+    grid-template-columns: 1fr;
+  }
+  .mascot-center {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* FOOTERSTYLES */
+
+.site-footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  padding-top: 50px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  border-top: 4px solid #0284c7;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.footer-heading::after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 3px;
+  background-color: #38bdf8;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.footer-desc, .footer-notice {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+.footer-contact-list, .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact-list li, .footer-links li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-links a, .footer-contact-list a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover, .footer-contact-list a:hover {
+  color: #38bdf8;
+}
+
+.dezurna-phone {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #38bdf8;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  background-color: #020617;
+  padding: 20px;
+  border-top: 1px solid #1e293b;
+  font-size: 0.85rem;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.legal-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.legal-links a {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  color: #94a3b8;
+}
+
+@media (max-width: 640px) {
+  .footer-bottom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* BACKROUND STYLES MAYBE */
+
+main, 
+section, 
+.schedules-hero, 
+.storitve-section, 
+.kontakt-section {
+  background: transparent !important; /* Clears solid white/gray section backgrounds */
+}
+
+.glass-card, 
+.clinic-card {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 8px 32px 0 rgba(2, 132, 199, 0.08) !important;
+}
