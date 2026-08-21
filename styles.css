@@ -1395,3 +1395,25 @@ background: transparent !important;
   background: #dcfce7 !important;                   /* Slightly darker green for interior box contrast */
   border-left: 4px solid #16a34a !important;
 }
+
+
+/* Restores side-by-side layout for Kontakt cards */
+.locations-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 30px !important;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.location-card {
+  width: 100% !important;
+}
+
+/* Stacks them on smaller screens */
+@media (max-width: 900px) {
+  .locations-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
