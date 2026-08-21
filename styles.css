@@ -305,7 +305,7 @@ position: sticky !important;
 }
 
 .ordinacije{
-  margin-bottom: 300px;
+
 } 
 
 
@@ -405,7 +405,7 @@ position: sticky !important;
 
 /* Smooth Scroll Margin for Navbar Offset */
 #tehnologija {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 500px;
 }
 
 .tech-section {
@@ -826,51 +826,76 @@ position: sticky !important;
   color: #64748b;
 }
 
+/* SCHEDULES GRID STYLES SPREMENJEN */
+
 .schedules-grid {
-  display: grid;
-  grid-template-columns: 1fr 220px 1fr;
-  gap: 30px;
-  align-items: center;
+  display: flex !important;
+  align-items: stretch !important; /* Forces both cards to stretch to equal height */
+  gap: 35px !important;
+  max-width: 1200px !important;    /* Widens overall container */
+  margin: 0 auto;
 }
 
+/* KONC */
+
+
+
+/* CLINIC CARD SPREMENJEN */
 .clinic-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-  border: 1px solid #e2e8f0;
+  flex: 1 1 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; /* Distributes vertical space evenly */
+  padding: 35px !important;                  /* Generous inner padding */
+  border-radius: 20px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.2s ease;
 }
+
+
+.clinic-card:hover {
+  transform: translateY(-4px);
+}
+
+
 
 .clinic-card-header h3 {
-  font-size: 1.6rem;
-  color: #0284c7;
-  margin: 0 0 6px 0;
+  font-size: 1.8rem !important;     /* Larger clinic title */
+  color: #0284c7 !important;
+  margin-bottom: 6px !important;
 }
 
 .clinic-card-header .address {
-  color: #64748b;
-  margin: 0 0 12px 0;
-  font-size: 0.95rem;
+  font-size: 1.05rem !important;    /* Larger address text */
+  color: #475569 !important;
 }
+
+.card-brod {
+  background: #ffffff !important;
+  border: 2px solid #e0f2fe !important;
+}
+
+.card-cufar {
+  background: #f0fdf4 !important;
+  border: 2px solid #dcfce7 !important;
+}
+
+
+
 
 .phone-link {
-  display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  margin-bottom: 20px;
+  font-size: 1.1rem !important;     /* Larger phone button */
+  font-weight: bold !important;
+  padding: 8px 18px !important;
+  margin-top: 10px !important;
+  display: inline-block !important;
 }
 
+
 .doctor-schedule h4 {
-  font-size: 1.05rem;
-  color: #334155;
-  margin: 15px 0 10px 0;
-  border-bottom: 2px solid #38bdf8;
-  display: inline-block;
-  padding-bottom: 2px;
+  font-size: 1.2rem !important;     /* Larger doctor heading */
+  color: #0f172a !important;
+  margin-top: 15px !important;
 }
 
 .divider-top {
@@ -885,17 +910,16 @@ position: sticky !important;
 }
 
 .schedule-table td {
-  padding: 8px 0;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 0.95rem;
-  color: #475569;
+  font-size: 1.05rem !important;    /* Larger schedule text */
+  padding: 8px 0 !important;
 }
 
-.schedule-table td:last-child {
-  text-align: right;
-  font-weight: 600;
-  color: #0f172a;
+.schedule-table tr td:last-child {
+  font-weight: 700 !important;      /* Extra bold hours for pop */
+  color: #0f172a !important;
 }
+
+/* KONC */
 
 .mascot-center {
   display: flex;
@@ -1244,4 +1268,130 @@ background: transparent !important;
   .clinic-card {
     width: 100%;
   }
+}
+
+
+/* ORDINACIJE SPET SPREMINJANJE STYLES VELIKOS ČUFAR */
+
+/* ==========================================================================
+   FINAL OVERRIDE: PERFECT EQUAL HEIGHT CARDS
+   ========================================================================== */
+
+/* 1. Equal-width grid that forces both columns to match full vertical height */
+.schedules-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 30px !important;
+  align-items: stretch !important; /* Forces equal heights */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 2. Forces card inner containers to fill the full grid cell */
+.clinic-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Pushes ČUFAR's notice box to the bottom edge so it aligns with BROD */
+.card-cufar .notice-box {
+  margin-top: auto !important;
+  background: rgba(0, 119, 182, 0.06) !important;
+  padding: 18px !important;
+  border-radius: 12px !important;
+  border-left: 4px solid #0077b6 !important;
+  width: 100% !important;
+}
+
+/* 4. Mobile responsiveness fix */
+@media (max-width: 768px) {
+  .schedules-grid {
+    grid-template-columns: 1fr !important; /* Stacks vertically on phone screens */
+  }
+}
+
+
+/* KONC */
+
+
+
+/* MARGIN DA SE NE VID NASLEDN TOPIC STYLES */
+
+/* ==========================================================================
+   NAVIGATION SCROLL & SECTION SPACING FIX
+   ========================================================================== */
+
+/* 1. Ensure all main target sections take up the full viewport height */
+#storitve,
+#tehnologija,
+#kontakt,
+#ordinacije {
+  min-height: 100vh !important;       /* Forces section to fill the screen */
+  padding-top: 100px !important;       /* Clean top margin below header when jumped to */
+  padding-bottom: 120px !important;    /* Creates enough space before the next section appears */
+  scroll-margin-top: 80px !important; /* Offsets scroll position for sticky navbar */
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;  /* Centers section content vertically */
+}
+
+/* 2. Optional: Adjust scroll offset for smaller screens */
+@media (max-width: 768px) {
+  #storitve,
+  #tehnologija,
+  #kontakt,
+  #ordinacije {
+    min-height: auto !important;      /* Lets long stacked content flow naturally on mobile */
+    padding-top: 60px !important;
+    padding-bottom: 80px !important;
+    scroll-margin-top: 60px !important;
+  }
+}
+
+/* KONC */
+
+
+/* Tighten spacing specifically for Delovni Čas Ordinacij */
+#ordinacije {
+  justify-content: flex-start !important; /* Prevents vertical centering gap */
+  padding-top: 40px !important;            /* Reduced top padding */
+  margin-top: 0 !important;
+}
+
+.schedules-hero {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+
+
+/* ==========================================================================
+   CUSTOM CARD BACKGROUND COLORS
+   ========================================================================== */
+
+/* BROD: Soft White-Blue Tint */
+.card-brod {
+  background: #ace5f3 !important;                   /* Very subtle sky-blue background */
+  border: 1px solid #bae6fd !important;             /* Matching soft blue border */
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08) !important;
+}
+
+/* ČUFAR: Soft Mint-Green Tint */
+.card-cufar {
+  background: #f0fdf4 !important;                   /* Very subtle mint-green background */
+  border: 1px solid #bbf7d0 !important;             /* Matching soft green border */
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.08) !important;
+}
+
+/* Contrast adjustment for ČUFAR's inner notice box */
+.card-cufar .notice-box {
+  background: #dcfce7 !important;                   /* Slightly darker green for interior box contrast */
+  border-left: 4px solid #16a34a !important;
 }
